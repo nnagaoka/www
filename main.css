@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+body{
+ text-align:center;
+}
+
+#container {
+ width:100%;
+ text-align:left;
+}
+
+#boxA {
+ height:200px;
+ width:100%;
+ clear:both;
+ text-align:center;
+ background-image: url("../www/02.jpg");
+}
+
+/*タイトルフォント*/
+#top_title{
+ color:black;
+}
+
+/*カテゴリー(テーブル)*/
+#categoly {
+ width:100%;
+ clear:both;
+ text-align:center;
+ background-color:#b97a57;
+}
+
+table.cate td{
+ width:100px;
+ padding: 5px;
+}
+
+table.cate td a{
+ display:block;
+ width:100%;
+ height:100%;
+ color:white;
+ padding: 5px;
+ text-decoration: none;
+}
+
+ table.cate td a:hover{
+ border-radius:6px;
+ color:#b97a57;
+ background-color:white;
+ padding: 5px;
+}
+
+/*左カラム*/
+#boxB {
+ color:white;
+ width:15%;
+ float:left;
+}
+
+/*中央カラム*/
+#boxC {
+ width:68%;
+ float:left;
+ text-align:center;
+/* background-image: url("")*/
+}
+
+/*右カラム*/
+#boxD {
+ color:white;
+ width:15%;
+ float:right;
+}
+
+#line{
+ width:100%;
+ height:40px;
+ clear:both;
+ color:#b97a57;
+
+ margin-top:460px;
+}
+
+#boxE {
+ width:100%;
+ clear:both;
+ height:100px;
+ background-image: url("../www/02.jpg");
+}
+
+/*検索ボタン*/
+input#bo {
+ border: 1px #FF9933 solid;
+ border-radius:10px;
+ background-color:#FF9933;
+ color:white;
+ cursor:pointer;
+}
+
+input#bo:hover {
+ border: 1px #b97a57 solid;
+ border-radius:10px;
+ background-color:#FF6699;
+ color:white;
+ cursor:pointer;
+}
+
+#waku {
+ background-image: url("upload/hana.jpg");
+ width:45%;
+ margin: 0 auto;
+}
+
+#lay{
+    background-color:rgba(255,255,255,0.5);
+}
+
+#bun{
+ line-height: 35px;
+ font-weight: bold;
+}
+
+img#how:hover {
+ width:250px;
+}
