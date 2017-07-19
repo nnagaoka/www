@@ -41,9 +41,22 @@ if($_GET["text"] == ""){
 
 // 検索のカウント                                                               
     print("<br><font size=\"5\">\" ".$text." \"</font><br>");
+    ?>
+    <?php
+  		$rss = simplexml_load_file('http://iss.ndl.go.jp/books.rss?ar=4e1f&except_repository_nos[]=R100000038&except_repository_nos[]=R100000049&except_repository_nos[]=R100000073&filters[]=3_国立国会図書館&any='.$_GET["text"].'');
+		echo '<ol>';
+		foreach($rss->channel->item as $item){
+        	$title = $item->title;
+        	$date = date("Y年 n月 j日", strtotime($item->pubDate));
+        	$link = $item->link;
+        	$description = mb_strimwidth (strip_tags($item->description), 0 , 110, "…Read More", "utf-8");
+	?>
+	<li><a href="<?php echo $link; ?>" target="_blank">
+	<span class="title"><?php echo $title; ?></span>
+	</a></li>
+	<?php }  echo '</ol>';
   }
-
-?>
+  	?>
 
     </div>
 
