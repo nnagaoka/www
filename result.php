@@ -31,8 +31,6 @@ if($_GET["text"] == ""){
     print("<br><br>値を入力してください<br>");
 
 }else{
-    $text = mysqli_escape_string($conn, $_GET["text"]);
-    $text = str_replace("%", "\%", $text);
 
 // 検索のカウント                                                               
     print("<br><font size=\"5\">\" ".$text." \"</font><br>");
