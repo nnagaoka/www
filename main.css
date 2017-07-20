@@ -14,7 +14,7 @@ body{
  width:100%;
  clear:both;
  text-align:center;
- background-image: url("../www/02.jpg");
+ background-image: url("../sub/02.jpg");
 }
 
 /*タイトルフォント*/
@@ -86,7 +86,7 @@ table.cate td a{
  width:100%;
  clear:both;
  height:100px;
- background-image: url("../www/02.jpg");
+ background-image: url("../sub/02.jpg");
 }
 
 /*検索ボタン*/
