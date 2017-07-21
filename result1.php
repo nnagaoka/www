@@ -24,26 +24,21 @@ b
         <br>
         <br>   
         <br>
+        <a href="./index1.html">home</a>
         <?php
-$host = "localhost";
-if (!$conn = mysqli_connect($host, "72k1", "Obake<72")){
-    die("データベース接続エラー.<br />");
-}
-mysqli_select_db($conn, "opac");
-mysqli_set_charset($conn, "utf8");
+
 
 if($_GET["text"] == ""){
     print("<br><br>値を入力してください<br>");
 
 }else{
-    $text = mysqli_escape_string($conn, $_GET["text"]);
-    $text = str_replace("%", "\%", $text);
-}
+
+
 // 検索のカウント                                                               
     print("<br><font size=\"5\">\" ".$text." \"</font><br>");
     ?>
    <?php
-      $rss_url = simplexml_load_file('http://iss.ndl.go.jp/books.rss?ar=4e1f&except_repository_nos[]=R100000038&except_repository_nos[]=R100000049&except_repository_nos[]=R100000073&filters[]=3_国立国会図書館&any='.$_GET["text"].'');
+      $rss_url = simplexml_load_file('http://iss.ndl.go.jp/books.rss?ar=4e1f&except_repository_nos[]=R100000038&except_repository_nos[]=R100000049&except_repository_nos[]=R100000073&filters[]=3_国立国会図書館&any='.$text.'');
       $rss_data  = simplexml_load_file( $rss_url, 'SimpleXMLElement', LIBXML_NOCDATA );
       $rss_array = array();
       $i         = 0;
@@ -57,6 +52,7 @@ if($_GET["text"] == ""){
           $i++;
       print_r($rss_array);
     }
+  }
     ?>
 	
 
