@@ -21,13 +21,14 @@ b
     </div>
 
     <div id="boxC">
+        <a href="./">home</a>
         <br>
         <br>   
         <br>
         <?php
 
-
-if($_GET["text"] == ""){
+$text = $_GET["text"];
+if($text == ""){
     print("<br><br>値を入力してください<br>");
 
 }else{
@@ -36,7 +37,7 @@ if($_GET["text"] == ""){
     print("<br><font size=\"5\">\" ".$text." \"</font><br>");
     ?>
    <?php
-                $rss = simplexml_load_file('http://iss.ndl.go.jp/books.rss?ar=4e1f&except_repository_nos[]=R100000038&except_repository_nos[]=R100000049&except_repository_nos[]=R100000073&filters[]=3_国立国会図書館&any='.$_GET["text"].'');
+                $rss = simplexml_load_file('http://iss.ndl.go.jp/books.rss?ar=4e1f&except_repository_nos[]=R100000038&except_repository_nos[]=R100000049&except_repository_nos[]=R100000073&filters[]=3_国立国会図書館&any='.$text.'');
                 echo '<ol>';
                 foreach($rss->channel->item as $item){
                 $title = $item->title;
